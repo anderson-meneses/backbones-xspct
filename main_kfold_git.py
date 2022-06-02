@@ -99,10 +99,6 @@ for i in range(n_fold):
     SEED_3 = random.randint(seed_min, seed_max)
 
     X_train, X_val, Y_train, Y_val = train_test_split(X, Y, test_size=0.2, random_state=SEED_1)
-    
-    image_generator = image_datagen.flow(X_train, Y_train,
-        batch_size=use_batch_size,
-        seed=SEED_2)
 
     # Data Augmentation 2 - 2022.05.07 Fazendo DA no conj de valid
     trainDS = tf.data.Dataset.from_tensor_slices((X_train, Y_train))
@@ -159,8 +155,6 @@ for i in range(n_fold):
     np.save(folder_name + '/history_%i.npy'%i, history.history)
 
     print("Calculando o dice para as imagens de teste")
-
-    time_test_1 = time.time()
   
     predicao = np.float64(model.predict(X_val))
     
