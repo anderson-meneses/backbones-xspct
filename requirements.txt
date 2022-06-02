@@ -1,0 +1,9 @@
+tensorflow-gpu==2.8
+cudatoolkit==11.0
+cudnn==8.2.1
+opencv-python
+segmentation-models
+scikit-image
+imagecodecs
+Pillow
+h5py==2.10.0
